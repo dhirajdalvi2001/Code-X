@@ -1,5 +1,5 @@
 {
-  "name": "chat-app",
+  "name": "code-x",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,10 +8,9 @@
     "server": "nodemon backend/server.js"
   },
   "keywords": [
-    "mern",
-    "chat-app"
+    "code-x
   ],
-  "author": "Piyush Agarwal",
+  "author": "Dhiraj Dalvi",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
