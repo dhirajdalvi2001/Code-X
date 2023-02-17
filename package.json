@@ -8,7 +8,7 @@
     "server": "nodemon backend/server.js"
   },
   "keywords": [
-    "code-x
+    "code-x",
   ],
   "author": "Dhiraj Dalvi",
   "license": "ISC",
