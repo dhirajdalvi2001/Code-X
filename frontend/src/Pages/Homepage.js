@@ -23,7 +23,7 @@ function Homepage() {
   }, [history]);
 
   return (
-    <Container maxW="xl" centerContent>
+    <Container maxW="xl" centerContent style={{ opacity: 0.9 }}>
       <Box
         d="flex"
         justifyContent="center"
@@ -34,15 +34,15 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+        <Text fontSize="4xl" fontWeight={"boldimage.png"} textAlign={"center"}>
+          Code-X
         </Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+            <Tab style={{ outline: "none" }}>Login</Tab>
+            <Tab style={{ outline: "none" }}>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
