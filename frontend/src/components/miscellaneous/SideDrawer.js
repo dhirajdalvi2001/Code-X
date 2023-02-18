@@ -29,7 +29,6 @@ import ProfileModal from "./ProfileModal";
 import NotificationBadge from "react-notification-badge";
 import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
-import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
 
 function SideDrawer() {
@@ -136,12 +135,12 @@ function SideDrawer() {
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
+            <Text display={{ base: "none", md: "flex" }} px={4} w="300px">
               Search User
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">
+        <Text fontSize="2xl" marginRight="auto" fontFamily="Work sans">
           Code-X
         </Text>
         <div>
@@ -195,7 +194,7 @@ function SideDrawer() {
         <DrawerContent>
           <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
           <DrawerBody>
-            <Box d="flex" pb={2}>
+            <Box display="flex" pb={2}>
               <Input
                 placeholder="Search by name or email"
                 mr={2}
@@ -208,14 +207,49 @@ function SideDrawer() {
               <ChatLoading />
             ) : (
               searchResult?.map((user) => (
-                <UserListItem
-                  key={user._id}
-                  user={user}
-                  handleFunction={() => accessChat(user._id)}
-                />
+                <div key={user._id}>
+                  {console.log(user.name)}
+                  {console.log(user.pic)}
+                  {console.log(user.email)}
+                  <Box
+                    onClick={() => accessChat(user._id)}
+                    cursor="pointer"
+                    bg="#E8E8E8"
+                    _hover={{
+                      background: "#38B2AC",
+                      color: "white",
+                    }}
+                    w="100%"
+                    display="flex"
+                    alignItems="center"
+                    color="black"
+                    px={3}
+                    py={2}
+                    mb={2}
+                    borderRadius="lg"
+                  >
+                    <Avatar
+                      mr={2}
+                      size="sm"
+                      cursor="pointer"
+                      name={user.name}
+                      src={user.pic}
+                    />
+                    <Box>
+                      {console.log(user.name)}
+                      {console.log(user.email)}
+                      {console.log(user.pic)}
+                      <Text>{user.name}</Text>
+                      <Text fontSize="xs">
+                        <b>Email : </b>
+                        {user.email}
+                      </Text>
+                    </Box>
+                  </Box>
+                </div>
               ))
             )}
-            {loadingChat && <Spinner ml="auto" d="flex" />}
+            {loadingChat && <Spinner ml="auto" display="flex" />}
           </DrawerBody>
         </DrawerContent>
       </Drawer>

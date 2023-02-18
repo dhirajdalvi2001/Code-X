@@ -15,7 +15,7 @@ const UserListItem = ({ handleFunction }) => {
         color: "white",
       }}
       w="100%"
-      d="flex"
+      display="flex"
       alignItems="center"
       color="black"
       px={3}
@@ -31,6 +31,9 @@ const UserListItem = ({ handleFunction }) => {
         src={user.pic}
       />
       <Box>
+        {console.log(user.name)}
+        {console.log(user.email)}
+        {console.log(user.pic)}
         <Text>{user.name}</Text>
         <Text fontSize="xs">
           <b>Email : </b>
