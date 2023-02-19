@@ -120,6 +120,11 @@ function SideDrawer() {
       });
     }
   };
+  function handleKeyPress(e) {
+    if (e.keyCode === 13) {
+      handleSearch();
+    }
+  }
 
   return (
     <>
@@ -199,6 +204,7 @@ function SideDrawer() {
                 placeholder="Search by name or email"
                 mr={2}
                 value={search}
+                onKeyDown={handleKeyPress}
                 onChange={(e) => setSearch(e.target.value)}
               />
               <Button onClick={handleSearch}>Go</Button>
